@@ -1,6 +1,7 @@
 ﻿using Book_Application.Products.DTOs;
 using Book_Domain.Products;
 using Book_Domain.Products.Repositorey;
+using Book_Domain.Shared;
 
 namespace Book_Application.Products
 {
@@ -13,7 +14,7 @@ namespace Book_Application.Products
         }
         public void AddProduct(AddProductDto dtoCommand)
         {
-            var product = new Product(dtoCommand.BookName, dtoCommand.Price);
+            var product = new Product(dtoCommand.BookName, Money.FromToman(dtoCommand.Price));
             _productRepository.Add(product);
             _productRepository.Save();
         }
@@ -21,7 +22,7 @@ namespace Book_Application.Products
         public void EditProduct(EditProductDto dtoCommand)
         {
             var product = _productRepository.GetById(dtoCommand.Id);
-            product.EditBook(dtoCommand.BookName, dtoCommand.Price);
+            product.EditBook(dtoCommand.BookName, Money.FromToman(dtoCommand.Price));
             _productRepository.Update(product);
             _productRepository.Save();
         }
@@ -33,7 +34,7 @@ namespace Book_Application.Products
             {
                 Id = product.Id,
                 BookName = product.BookName,
-                Price = product.Price,
+                Price = product.Price.Value,
             };
         }
 
@@ -44,7 +45,7 @@ namespace Book_Application.Products
             {
                 Id = product.Id,
                 BookName = product.BookName,
-                Price = product.Price,
+                Price = product.Price.Value,
             }).ToList();
         }
     }
