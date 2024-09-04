@@ -47,5 +47,10 @@ namespace Book_Infrastructre.Persestent_Memory.Products
         {
             //
         }
+
+        public bool IsProductExsist(Guid productId)
+        {
+            return _context.Products.Any(f => f.Id == productId);
+        }
     }
 }

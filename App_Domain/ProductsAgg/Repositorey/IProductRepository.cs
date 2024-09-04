@@ -14,5 +14,6 @@ namespace Book_Domain.Products.Repositorey
         List<Product> GetList();
         Product GetById(Guid productId);
         void Save();
+        bool IsProductExsist(Guid productId);
     }
 }

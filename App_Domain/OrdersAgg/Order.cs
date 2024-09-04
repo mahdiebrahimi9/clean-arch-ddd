@@ -1,4 +1,5 @@
 ﻿using Book_Domain.OrdersAgg;
+using Book_Domain.OrdersAgg.Services;
 using Book_Domain.Shared;
 using System.Runtime.CompilerServices;
 
@@ -19,8 +20,11 @@ namespace Book_Domain.Orders
         }
 
 
-        public void AddItem(Guid productId, int count, int price)
+        public void AddItem(Guid productId, int count, int price, IOrderDomainService orderDomainService)
         {
+            if (orderDomainService.IsProductNotExsist(productId))
+                throw new Exception("asdasd");
+
             if (Items.Any(f => f.ProductId == productId))
                 throw new Exception("asdqwdqd");
             Items.Add(new OrderItem(Id, productId, count, Money.FromToman(price)));
