@@ -1,13 +1,14 @@
 ﻿using Book_Domain.OrdersAgg;
+using Book_Domain.OrdersAgg.Events;
 using Book_Domain.OrdersAgg.Services;
 using Book_Domain.Shared;
 using System.Runtime.CompilerServices;
 
 namespace Book_Domain.Orders
 {
-    public class Order
+    public class Order : AggregateRoot
     {
-        public long Id { get; private set; }
+        public long UserId { get; private set; }
         public Guid ProductId { get; private set; }
         public ICollection<OrderItem> Items { get; private set; }
         public DateTime CreationData { get; private set; }
@@ -44,7 +45,7 @@ namespace Book_Domain.Orders
         {
             IsFinally = true;
             FinallyDate = DateTime.Now;
-
+            AddDomainEvent(new OrderFinalized(Id, UserId));
         }
 
     }

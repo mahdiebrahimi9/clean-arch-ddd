@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Book_Domain.OrdersAgg
 {
-    public class OrderItem
+    public class OrderItem:BaseEntity
     {
         public long Id { get; private set; }
         public long OrderId { get; protected set; }

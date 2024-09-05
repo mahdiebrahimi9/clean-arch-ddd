@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Book_Domain.Products
 {
-    public class Product
+    public class Product:AggregateRoot
     {
         public Guid Id { get; private set; }
         public string BookName { get; private set; }

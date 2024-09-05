@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Book_Domain.ProductsAgg
 {
-    public class ProductImage
+    public class ProductImage:BaseEntity
     {
         public long Id { get; private set; }
         public string ImageName { get; private set; }
