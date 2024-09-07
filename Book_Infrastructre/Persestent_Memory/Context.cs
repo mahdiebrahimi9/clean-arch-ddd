@@ -12,7 +12,7 @@ namespace Book_Infrastructre.Persestent_Memory
     {
 
         public List<Product> Products { get; set; }
-        public List<Order> Orders { get; set; } = new List<Order>() { new Order(Guid.NewGuid(), 36, 5) };
+        public List<Order> Orders { get; set; } = new List<Order>() { new Order(1) };
 
     }
 }

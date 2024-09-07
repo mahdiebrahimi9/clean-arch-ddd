@@ -8,7 +8,7 @@ namespace Book_Application.Products.DTOs
 {
     public class ProductDto
     {
-        public Guid Id { get; set; }
+        public long Id { get; set; }
         public string BookName { get; set; }
         public int Price { get; set; }
     }
@@ -19,7 +19,7 @@ namespace Book_Application.Products.DTOs
     }
     public class EditProductDto
     {
-        public Guid Id { get; set; }
+        public long Id { get; set; }
         public string BookName { get; set; }
         public int Price { get; set; }
     }

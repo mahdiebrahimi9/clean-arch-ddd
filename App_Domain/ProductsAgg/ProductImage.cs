@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Book_Domain.ProductsAgg
 {
-    public class ProductImage:BaseEntity
+    public class ProductImage : BaseEntity
     {
         public long Id { get; private set; }
         public string ImageName { get; private set; }
-        public Guid ProductId { get; private set; }
+        public long ProductId { get; private set; }
 
-        public ProductImage(Guid productId, string imageName)
+        public ProductImage(long productId, string imageName)
         {
             ImageName = imageName;
             ProductId = productId;

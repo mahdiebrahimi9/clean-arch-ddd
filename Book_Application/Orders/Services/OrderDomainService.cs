@@ -16,7 +16,7 @@ namespace Book_Application.Orders.Services
         {
             _productRepository = productRepository;
         }
-        public bool IsProductNotExsist(Guid productId)
+        public bool IsProductNotExsist(long productId)
         {
             var isProductExsits = _productRepository.IsProductExsist(productId);
             return !isProductExsits;

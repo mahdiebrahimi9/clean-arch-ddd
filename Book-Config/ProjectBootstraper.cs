@@ -9,8 +9,6 @@ using Book_Infrastructre.Persestent_Memory;
 using Book_Infrastructre.Persestent_Memory.Orders;
 using Book_Infrastructre.Persestent_Memory.Products;
 using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Concurrent;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Book_Config
 {

@@ -28,7 +28,7 @@ namespace Book_Infrastructre.Persestent_Memory.Products
             Add(product);
         }
 
-        public Product GetById(Guid productId)
+        public Product GetById(long productId)
         {
             return _context.Products.FirstOrDefault(f => f.Id == productId);
         }
@@ -48,7 +48,7 @@ namespace Book_Infrastructre.Persestent_Memory.Products
             //
         }
 
-        public bool IsProductExsist(Guid productId)
+        public bool IsProductExsist(long productId)
         {
             return _context.Products.Any(f => f.Id == productId);
         }

@@ -8,6 +8,6 @@ namespace Book_Domain.OrdersAgg.Services
 {
     public interface IOrderDomainService
     {
-        bool IsProductNotExsist(Guid productId);
+        bool IsProductNotExsist(long productId);
     }
 }

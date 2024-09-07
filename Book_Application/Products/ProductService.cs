@@ -27,7 +27,7 @@ namespace Book_Application.Products
             _productRepository.Save();
         }
 
-        public ProductDto GetProductById(Guid id)
+        public ProductDto GetProductById(long id)
         {
             var product = _productRepository.GetById(id);
             return new ProductDto()

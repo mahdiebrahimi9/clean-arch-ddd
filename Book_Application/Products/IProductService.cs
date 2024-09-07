@@ -11,7 +11,7 @@ namespace Book_Application.Products
     {
         void AddProduct(AddProductDto dtoCommand);
         void EditProduct(EditProductDto dtoCommand);
-        ProductDto GetProductById(Guid id);
+        ProductDto GetProductById(long id);
         List<ProductDto> GetProducts();
 
     }

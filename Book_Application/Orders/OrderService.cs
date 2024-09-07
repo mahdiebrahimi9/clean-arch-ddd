@@ -16,7 +16,7 @@ namespace Book_Application.Orders
         }
         public void AddOrder(AddOrderDto dtoCommand)
         {
-            var order = new Order(dtoCommand.ProductId, dtoCommand.Price, dtoCommand.Count);
+            var order = new Order(dtoCommand.ProductId);
             _orderRepository.Add(order);
             _orderRepository.SaveChanges();
         }
@@ -41,9 +41,7 @@ namespace Book_Application.Orders
             return new OrderDto()
             {
                 Id = order.Id,
-                ProductId = order.ProductId,
-                Price = order.Price,
-                Count = order.Count
+
 
             };
         }
@@ -53,9 +51,7 @@ namespace Book_Application.Orders
             return _orderRepository.GetList().Select(order => new OrderDto()
             {
                 Id = order.Id,
-                ProductId = order.ProductId,
-                Price = order.Price,
-                Count = order.Count
+
             }).ToList();
         }
     }
