@@ -9,7 +9,7 @@ namespace Book_Domain.ProductsAgg
 {
     public class ProductImage : BaseEntity
     {
-        public long Id { get; private set; }
+        //public long Id { get; private set; }
         public string ImageName { get; private set; }
         public long ProductId { get; private set; }
 
