@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Book_Domain.Shared.Exceptions;
 
 namespace Book_Domain.Shared
 {
@@ -13,7 +8,7 @@ namespace Book_Domain.Shared
         public Money(int rialValue)
         {
             if (rialValue < 0)
-                throw new InvalidDataException();
+                throw new InvalidDomainDataException();
             Value = rialValue;
         }
 

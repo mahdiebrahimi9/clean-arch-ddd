@@ -5,7 +5,7 @@ using Book_Domain.Shared.Exceptions;
 using Clean_Arch_Book.Domain.Test.Unit.Builders;
 using FluentAssertions;
 
-namespace Clean_Arch_Book.Domain.Test.Unit
+namespace Clean_Arch_Book.Domain.Test.Unit.ProductAgg
 {
     public class ProductTests
     {

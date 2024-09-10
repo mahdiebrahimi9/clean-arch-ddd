@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Tests.Unit", "Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DD475CA2-AC75-44A2-9DC1-05D0DA2B1C14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean-Arch-Book.Domain.Test.Unit", "Clean-Arch-Book.Domain.Test.Unit\Clean-Arch-Book.Domain.Test.Unit.csproj", "{CDCCF994-CA8A-4BB6-8690-D8CE580A6B54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean-Arch-Book.Domain.Test.Unit", "Clean-Arch-Book.Domain.Test.Unit\Clean-Arch-Book.Domain.Test.Unit.csproj", "{CDCCF994-CA8A-4BB6-8690-D8CE580A6B54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
