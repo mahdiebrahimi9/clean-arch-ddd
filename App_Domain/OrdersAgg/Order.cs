@@ -3,6 +3,7 @@ using Book_Domain.OrdersAgg.Events;
 using Book_Domain.OrdersAgg.Exceptions;
 using Book_Domain.OrdersAgg.Services;
 using Book_Domain.Shared;
+using Book_Domain.Shared.Exceptions;
 using System.Runtime.CompilerServices;
 
 namespace Book_Domain.Orders
@@ -15,9 +16,11 @@ namespace Book_Domain.Orders
         public bool IsFinally { get; private set; }
         public DateTime FinallyDate { get; private set; }
         public int TotalPrice;
+        public int TotalItem { get; private set; }
         public Order(long userId)
         {
             UserId = userId;
+            Items = new List<OrderItem>();
         }
 
 
@@ -27,15 +30,17 @@ namespace Book_Domain.Orders
                 throw new ProductNotFoundException();
 
             if (Items.Any(f => f.ProductId == productId))
-                throw new Exception("asdqwdqd");
+                return;
             Items.Add(new OrderItem(Id, productId, count, Money.FromToman(price)));
+            TotalItem += count;
         }
         public void RemoveItem(long productId)
         {
             var item = Items.FirstOrDefault(f => f.ProductId == productId);
             if (item == null)
-                throw new Exception("asdqwdq");
+                throw new InvalidDomainDataException();
             Items.Remove(item);
+            TotalItem -= item.Count;
         }
         public void IncreaseProductCount(int count)
         {
