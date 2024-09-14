@@ -4,7 +4,6 @@ using Book_Domain.OrdersAgg.Exceptions;
 using Book_Domain.OrdersAgg.Services;
 using Book_Domain.Shared;
 using Book_Domain.Shared.Exceptions;
-using System.Runtime.CompilerServices;
 
 namespace Book_Domain.Orders
 {

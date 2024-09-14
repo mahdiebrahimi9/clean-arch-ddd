@@ -41,7 +41,7 @@ namespace Book_Application.Orders
             return new OrderDto()
             {
                 Id = order.Id,
-
+                UserId = order.UserId,
 
             };
         }
