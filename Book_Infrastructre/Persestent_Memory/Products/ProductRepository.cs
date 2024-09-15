@@ -23,14 +23,15 @@ namespace Book_Infrastructre.Persestent_Memory.Products
 
         public void Update(Product product)
         {
-            var oldProduct = GetById(product.Id);
-            _context.Products.Remove(oldProduct);
-            Add(product);
+            //var oldProduct = GetById(product.Id);
+            //_context.Products.Remove(oldProduct);
+            //Add(product);
         }
 
-        public Product GetById(long productId)
+        public async Task<Product> GetById(long productId)
         {
-            return _context.Products.FirstOrDefault(f => f.Id == productId);
+            var result =  _context.Products.FirstOrDefault(f => f.Id == productId);
+            return await Task.FromResult(result);
         }
 
         public List<Product> GetList()
@@ -43,7 +44,7 @@ namespace Book_Infrastructre.Persestent_Memory.Products
             _context.Products.Remove(product);
         }
 
-        public void Save()
+        public async Task Save()
         {
             //
         }

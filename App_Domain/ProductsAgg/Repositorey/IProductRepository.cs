@@ -6,8 +6,8 @@
         void Update(Product product);
         void Remove(Product product);
         List<Product> GetList();
-        Product GetById(long productId);
-        void Save();
+        Task<Product> GetById(long productId);
+        Task Save();
         bool IsProductExsist(long productId);
     }
 }
