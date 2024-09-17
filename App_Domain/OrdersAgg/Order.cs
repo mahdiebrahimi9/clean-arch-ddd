@@ -9,6 +9,12 @@ namespace Book_Domain.Orders
 {
     public class Order : AggregateRoot
     {
+        private Order() { }
+        public Order(long userId)
+        {
+            UserId = userId;
+            Items = new List<OrderItem>();
+        }
         public long UserId { get; private set; }
         public ICollection<OrderItem> Items { get; private set; }
         public DateTime CreationData { get; private set; }
@@ -16,11 +22,6 @@ namespace Book_Domain.Orders
         public DateTime FinallyDate { get; private set; }
         public int TotalPrice;
         public int TotalItem { get; private set; }
-        public Order(long userId)
-        {
-            UserId = userId;
-            Items = new List<OrderItem>();
-        }
 
 
         public void AddItem(long productId, int count, int price, IOrderDomainService orderDomainService)

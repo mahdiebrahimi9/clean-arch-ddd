@@ -9,6 +9,7 @@ namespace Clean_Arch_Book.Domain.Test.Unit.Builders
         private string _bookName = "test";
         private Money _price = new Money(1000000);
         private ICollection<ProductImage> _images;
+        private string _description = "test";
         public ProductBuilder SetBookName(string bookName)
         {
             _bookName = bookName;
@@ -22,7 +23,7 @@ namespace Clean_Arch_Book.Domain.Test.Unit.Builders
 
         public Product Build()
         {
-            return new Product(_bookName, _price);
+            return new Product(_bookName, _price, _description);
         }
     }
 }

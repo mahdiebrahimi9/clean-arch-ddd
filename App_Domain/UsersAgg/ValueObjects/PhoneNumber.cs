@@ -5,7 +5,7 @@ namespace Book_Domain.Users.ValueObjects
     public class PhoneNumber : BaseValueObject
     {
 
-        public string Phone { get; }
+        public string Phone { get; private set; }
 
         public PhoneNumber(string phone)
         {

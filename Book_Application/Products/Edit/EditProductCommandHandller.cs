@@ -14,10 +14,10 @@ namespace Book_Application.Products.Edit
         public async Task<Unit> Handle(EditProductCommand request, CancellationToken cancellationToken)
         {
             var product = await _productRepository.GetById(request.Id);
-            product.EditBook(request.BookName, Money.FromRial(request.Price));
+            product.EditBook(request.BookName, Money.FromRial(request.Price),request.Description);
             _productRepository.Update(product);
            await _productRepository.Save();
-            return Unit.Value;
+            return  Unit.Value;
         }
     }
 }

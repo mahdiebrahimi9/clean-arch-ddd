@@ -11,17 +11,21 @@ namespace Book_Domain.Users
 {
     public class User : AggregateRoot
     {
-        public string Name { get; private set; }
-        public string Family { get; private set; }
-        public PhoneBook PhoneNumber { get; private set; }
-        public string Email { get; private set; }
-        public User(string name, string family, PhoneBook phoneNumber, string email)
+        private User()
+        { }
+        public User(string name, string family, PhoneNumber phoneNumber, string email)
         {
             Name = name;
             Family = family;
             PhoneNumber = phoneNumber;
             Email = email;
         }
+
+        public string Name { get; private set; }
+        public string Family { get; private set; }
+        public PhoneNumber PhoneNumber { get; private set; }
+        public string Email { get; private set; }
+      
         public static User Register(string email)
         {
             var user = new User("", "", null, email);

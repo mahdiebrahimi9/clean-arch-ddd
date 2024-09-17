@@ -6,17 +6,19 @@ namespace Book_Domain.Products
 {
     public class Product : AggregateRoot
     {
-        public string BookName { get; private set; }
-        public Money Price { get; private set; }
-        public ICollection<ProductImage> Images { get; private set; }
-
-        public Product(string bookName, Money price)
+        private Product() { }
+        public Product(string bookName, Money price, string description)
         {
             BooKExep(bookName);
             BookName = bookName;
             Price = price;
             Images = new List<ProductImage>();
+            Description = description;
         }
+        public string Description { get; set; }
+        public string BookName { get; private set; }
+        public Money Price { get; private set; }
+        public ICollection<ProductImage> Images { get; private set; }
 
 
         public void AddImage(string imageName)
@@ -30,11 +32,12 @@ namespace Book_Domain.Products
                 throw new NullOrEmptyDomainDataException("image not found");
             Images.Remove(image);
         }
-        public void EditBook(string bookName, Money price)
+        public void EditBook(string bookName, Money price, string description)
         {
             BooKExep(bookName);
             BookName = bookName;
             Price = price;
+            Description = description;
         }
 
         private void BooKExep(string bookName)

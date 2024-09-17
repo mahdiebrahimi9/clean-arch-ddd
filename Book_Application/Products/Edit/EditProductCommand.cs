@@ -9,14 +9,10 @@ namespace Book_Application.Products.Edit
 {
     public class EditProductCommand : IRequest
     {
-        public EditProductCommand(long id, string bookName, int price)
-        {
-            Id = id;
-            BookName = bookName;
-            Price = price;
-        }
+     
         public long Id { get; set; }
         public string BookName { get; set; }
         public int Price { get; set; }
+        public string Description { get; set; }
     }
 }

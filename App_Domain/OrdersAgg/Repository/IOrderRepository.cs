@@ -10,8 +10,7 @@ namespace Book_Domain.Orders.Repository
     {
         void Add(Order order);
         void Update(Order order);
-        Order GetById(long id);
-        List<Order> GetList();
-        void SaveChanges();
+        Task<Order> GetById(long id);
+        Task SaveChanges();
     }
 }

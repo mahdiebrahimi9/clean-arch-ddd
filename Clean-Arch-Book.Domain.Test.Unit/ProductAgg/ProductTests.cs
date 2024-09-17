@@ -43,7 +43,7 @@ namespace Clean_Arch_Book.Domain.Test.Unit.ProductAgg
             //arrange
             var product = _prodBuilder.SetBookName("edit").SetPrice(1000).Build();
             //act
-            product.EditBook("editBook", new Money(1000000));
+            product.EditBook("editBook", new Money(1000000),"des");
             // assert
             product.BookName.Should().Be("editBook");
             product.Price.Value.Should().Be(1000000);

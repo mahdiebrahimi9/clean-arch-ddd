@@ -1,32 +1,34 @@
-﻿using Book_Application.Orders;
-using Book_Application.Orders.Services;
-using Book_Application.Products.Create;
+﻿using Book_Application.Products.Create;
 using Book_Contract;
 using Book_Domain.Orders.Repository;
-using Book_Domain.OrdersAgg.Services;
 using Book_Domain.Products.Repositorey;
-using Book_Infrastructre.Persestent_Memory;
-using Book_Infrastructre.Persestent_Memory.Orders;
-using Book_Infrastructre.Persestent_Memory.Products;
+using Book_Domain.UsersAgg.Repository;
+using Book_Infrastructre;
+using Book_Infrastructre.Persestent.Ef;
+using Book_Infrastructre.Persestent.Ef.Orders;
+using Book_Infrastructre.Persestent.Ef.Products;
+using Book_Infrastructre.Persestent.Ef.Users;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Book_Config
 {
     public class ProjectBootstraper
     {
-        public static void Init(IServiceCollection service)
+        public static void Init(IServiceCollection service, string connectionString)
         {
-            service.AddTransient<IOrderService, OrderService>();
-            service.AddTransient<IOrderRepository, OrderRepository>();
             service.AddTransient<IProductRepository, ProductRepository>();
-            //service.AddTransient<IProductService, ProductService>();
-            service.AddTransient<IOrderDomainService, OrderDomainService>();
+            service.AddTransient<IOrderRepository, OrderRepository>();
+            service.AddTransient<IUserRepository, UserRepository>();
 
             service.AddMediatR(typeof(CreateProductCommand).Assembly);
 
+            service.AddDbContext<BookDbContext>(option
+                => option.UseSqlServer(connectionString));
+
             service.AddScoped<ISmsService, SmsService>();
-            service.AddSingleton<Context>();
+
         }
     }
 }

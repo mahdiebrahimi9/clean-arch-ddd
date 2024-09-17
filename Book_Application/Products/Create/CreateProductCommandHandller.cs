@@ -15,9 +15,9 @@ namespace Book_Application.Products.Create
         public async Task<Unit> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
 
-            var product = new Product(request.BookName, Money.FromRial(request.Price));
+            var product = new Product(request.BookName, Money.FromRial(request.Price), request.Description);
             _productRepository.Add(product);
-            _productRepository.Save();
+            await _productRepository.Save();
             return await Unit.Task;
         }
     }

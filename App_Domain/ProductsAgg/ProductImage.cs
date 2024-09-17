@@ -5,10 +5,7 @@ namespace Book_Domain.ProductsAgg
 {
     public class ProductImage : BaseEntity
     {
-        //public long Id { get; private set; }
-        public string ImageName { get; private set; }
-        public long ProductId { get; private set; }
-
+        private ProductImage() { }
         public ProductImage(long productId, string imageName)
         {
             if (string.IsNullOrWhiteSpace(imageName))
@@ -17,6 +14,11 @@ namespace Book_Domain.ProductsAgg
             ImageName = imageName;
             ProductId = productId;
         }
+        public long Id { get; private set; }
+        public string ImageName { get; private set; }
+        public long ProductId { get; private set; }
+
+
 
 
     }

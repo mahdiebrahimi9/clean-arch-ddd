@@ -4,13 +4,16 @@ namespace Book_Domain.Shared
 {
     public class Money
     {
-        public int Value { get; }
+        private Money() { }
         public Money(int rialValue)
         {
             if (rialValue < 0)
                 throw new InvalidDomainDataException();
             Value = rialValue;
         }
+
+        public int Value { get; private set; }
+     
 
         public static Money FromRial(int value)
         {
