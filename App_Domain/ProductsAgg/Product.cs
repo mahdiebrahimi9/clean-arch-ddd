@@ -11,13 +11,13 @@ namespace Book_Domain.Products
         {
             BooKExep(bookName);
             BookName = bookName;
-            Price = price;
+            Money = price;
             Images = new List<ProductImage>();
             Description = description;
         }
-        public string Description { get; set; }
+        public string Description { get;private set; }
         public string BookName { get; private set; }
-        public Money Price { get; private set; }
+        public Money Money { get; private set; }
         public ICollection<ProductImage> Images { get; private set; }
 
 
@@ -36,7 +36,7 @@ namespace Book_Domain.Products
         {
             BooKExep(bookName);
             BookName = bookName;
-            Price = price;
+            Money = price;
             Description = description;
         }
 

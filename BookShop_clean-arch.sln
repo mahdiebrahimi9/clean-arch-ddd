@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DD475CA2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clean-Arch-Book.Domain.Test.Unit", "Clean-Arch-Book.Domain.Test.Unit\Clean-Arch-Book.Domain.Test.Unit.csproj", "{CDCCF994-CA8A-4BB6-8690-D8CE580A6B54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Book_Queary", "Book_Queary\Book_Queary.csproj", "{13EB0134-D0FE-4DAD-8621-217C69B9247E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{CDCCF994-CA8A-4BB6-8690-D8CE580A6B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDCCF994-CA8A-4BB6-8690-D8CE580A6B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDCCF994-CA8A-4BB6-8690-D8CE580A6B54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13EB0134-D0FE-4DAD-8621-217C69B9247E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13EB0134-D0FE-4DAD-8621-217C69B9247E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13EB0134-D0FE-4DAD-8621-217C69B9247E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13EB0134-D0FE-4DAD-8621-217C69B9247E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

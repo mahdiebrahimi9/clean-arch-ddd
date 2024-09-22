@@ -14,7 +14,7 @@ namespace Book_Domain.ProductsAgg
             ImageName = imageName;
             ProductId = productId;
         }
-        public long Id { get; private set; }
+       
         public string ImageName { get; private set; }
         public long ProductId { get; private set; }
 

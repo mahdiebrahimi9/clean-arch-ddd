@@ -17,10 +17,9 @@ namespace Book_Domain.Orders
         }
         public long UserId { get; private set; }
         public ICollection<OrderItem> Items { get; private set; }
-        public DateTime CreationData { get; private set; }
         public bool IsFinally { get; private set; }
         public DateTime FinallyDate { get; private set; }
-        public int TotalPrice;
+        public int TotalPrice => Items.Sum(r => r.Price.Value);
         public int TotalItem { get; private set; }
 
 

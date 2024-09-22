@@ -156,7 +156,8 @@ namespace Book_Infrastructre.Migrations
                                 .HasColumnType("bigint");
 
                             b1.Property<int>("Value")
-                                .HasColumnType("int");
+                                .HasColumnType("int")
+                                .HasColumnName("RialPrice");
 
                             b1.HasKey("OrderItemId");
 
@@ -172,14 +173,13 @@ namespace Book_Infrastructre.Migrations
 
             modelBuilder.Entity("Book_Domain.Products.Product", b =>
                 {
-                    b.OwnsOne("Book_Domain.Shared.Money", "Price", b1 =>
+                    b.OwnsOne("Book_Domain.Shared.Money", "Money", b1 =>
                         {
                             b1.Property<long>("ProductId")
                                 .HasColumnType("bigint");
 
                             b1.Property<int>("Value")
-                                .HasColumnType("int")
-                                .HasColumnName("RialPrice");
+                                .HasColumnType("int");
 
                             b1.HasKey("ProductId");
 
@@ -189,7 +189,7 @@ namespace Book_Infrastructre.Migrations
                                 .HasForeignKey("ProductId");
                         });
 
-                    b.Navigation("Price")
+                    b.Navigation("Money")
                         .IsRequired();
                 });
 

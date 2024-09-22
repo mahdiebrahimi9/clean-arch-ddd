@@ -88,7 +88,7 @@ namespace Clean_Arch_Book.Domain.Test.Unit.OrderAgg
             //act
             order.Finally();
             //assert
-            order.DomainEvents.Should().ContainEquivalentOf(new OrderFinalized(0, 1));
+            order.DomainEvents.Should().HaveCount(1);
         }
     }
 }

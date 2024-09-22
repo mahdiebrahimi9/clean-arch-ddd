@@ -46,7 +46,7 @@ namespace Clean_Arch_Book.Domain.Test.Unit.ProductAgg
             product.EditBook("editBook", new Money(1000000),"des");
             // assert
             product.BookName.Should().Be("editBook");
-            product.Price.Value.Should().Be(1000000);
+            product.Money.Value.Should().Be(1000000);
         }
         [Fact]
         public void AddImage_Should_Add_New_Image_To_Product()

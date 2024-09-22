@@ -16,7 +16,7 @@ namespace Book_Domain.Shared
         public DateTime CreationDate { get; }
         public BaseDomainEvent()
         {
-            CreationDate = new DateTime();
+            CreationDate = DateTime.Now;
         }
     }
     public class AggregateRoot : BaseEntity

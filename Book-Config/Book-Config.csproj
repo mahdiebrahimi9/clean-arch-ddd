@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Book_Infrastructre\Book_Infrastructre.csproj" />
+    <ProjectReference Include="..\Book_Queary\Book_Queary.csproj" />
   </ItemGroup>
 
 </Project>

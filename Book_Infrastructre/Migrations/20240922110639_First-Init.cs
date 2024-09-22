@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Book_Infrastructre.Migrations
 {
     /// <inheritdoc />
-    public partial class bookAppInit : Migration
+    public partial class FirstInit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -36,7 +36,7 @@ namespace Book_Infrastructre.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BookName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RialPrice = table.Column<int>(type: "int", nullable: false)
+                    Money_Value = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -68,7 +68,7 @@ namespace Book_Infrastructre.Migrations
                     OrderId = table.Column<long>(type: "bigint", nullable: false),
                     ProductId = table.Column<long>(type: "bigint", nullable: false),
                     Count = table.Column<int>(type: "int", nullable: false),
-                    Price_Value = table.Column<int>(type: "int", nullable: false)
+                    RialPrice = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

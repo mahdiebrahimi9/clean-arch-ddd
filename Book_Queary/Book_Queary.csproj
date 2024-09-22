@@ -4,15 +4,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <InvariantGlobalization>false</InvariantGlobalization>
   </PropertyGroup>
-
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="9.0.0" />
+	</ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="9.0.0" />
+    <Folder Include="Users\" />
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\Book_Contract\Book_Contract.csproj" />
+    <ProjectReference Include="..\Book_Infrastructre\Book_Infrastructre.csproj" />
   </ItemGroup>
 
 </Project>

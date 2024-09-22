@@ -4,11 +4,6 @@ using Book_Domain.Products;
 using Book_Domain.ProductsAgg;
 using Book_Domain.Users;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Book_Infrastructre.Persestent.Ef
 {
@@ -24,11 +19,11 @@ namespace Book_Infrastructre.Persestent.Ef
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>().OwnsOne(p => p.Price, option =>
+            modelBuilder.Entity<OrderItem>().OwnsOne(p => p.Price, option =>
             {
                 option.Property(p => p.Value).HasColumnName("RialPrice");
             });
-            modelBuilder.Entity<OrderItem>().OwnsOne(p => p.Price);
+            modelBuilder.Entity<Product>().OwnsOne(p => p.Money);
             modelBuilder.Entity<User>().OwnsOne(p => p.PhoneNumber);
 
             base.OnModelCreating(modelBuilder);
