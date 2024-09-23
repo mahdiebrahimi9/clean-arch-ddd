@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using MediatR;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Book_Domain.Shared
 {
@@ -11,7 +12,7 @@ namespace Book_Domain.Shared
             CreationDate = new DateTime();
         }
     }
-    public class BaseDomainEvent
+    public class BaseDomainEvent : INotification
     {
         public DateTime CreationDate { get; }
         public BaseDomainEvent()

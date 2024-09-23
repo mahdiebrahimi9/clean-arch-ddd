@@ -1,4 +1,4 @@
-﻿namespace Book_Application.Exceptions
+﻿namespace Book_Application.Shared.Exceptions
 {
     public class BaseCommandException : Exception
     {

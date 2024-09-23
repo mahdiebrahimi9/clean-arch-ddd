@@ -1,4 +1,5 @@
 ﻿using Book_Domain.ProductsAgg;
+using Book_Domain.ProductsAgg.Events;
 using Book_Domain.Shared;
 using Book_Domain.Shared.Exceptions;
 
@@ -14,8 +15,9 @@ namespace Book_Domain.Products
             Money = price;
             Images = new List<ProductImage>();
             Description = description;
+            AddDomainEvent(new ProductCreated(Id, BookName));
         }
-        public string Description { get;private set; }
+        public string Description { get; private set; }
         public string BookName { get; private set; }
         public Money Money { get; private set; }
         public ICollection<ProductImage> Images { get; private set; }

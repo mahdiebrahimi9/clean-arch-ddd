@@ -6,5 +6,7 @@
     <Nullable>enable</Nullable>
 	  <InvariantGlobalization>false</InvariantGlobalization>
   </PropertyGroup>
-
+<ItemGroup>
+	    <PackageReference Include="MediatR" Version="9.0.0" />
+</ItemGroup>
 </Project>
